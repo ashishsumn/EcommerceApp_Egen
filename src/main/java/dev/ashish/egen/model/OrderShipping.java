@@ -9,8 +9,7 @@ public class OrderShipping implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private Long order_shipping_id;
-    private Long order_id;
+    private Long shipping_id;
     private String order_shipping_addressline1;
     private String order_shipping_addressline2;
     private String order_shipping_city;
@@ -20,24 +19,15 @@ public class OrderShipping implements Serializable {
 
     public OrderShipping() {}
 
-    public OrderShipping(Long order_id, String order_shipping_addressline1, String order_shipping_addressline2,
+    public OrderShipping(String order_shipping_addressline1, String order_shipping_addressline2,
                          String order_shipping_city, String order_shipping_state, int order_shipping_zip,
                          int delivery_code){
-        this.order_id = order_id;
         this.order_shipping_addressline1 = order_shipping_addressline1;
         this.order_shipping_addressline2 = order_shipping_addressline2;
         this.order_shipping_city = order_shipping_city;
         this.order_shipping_state = order_shipping_state;
         this.order_shipping_zip = order_shipping_zip;
         this.delivery_code = delivery_code;
-    }
-
-    public Long getOrder_id() {
-        return order_id;
-    }
-
-    public void setOrder_id(Long order_id) {
-        this.order_id = order_id;
     }
 
     public String getOrder_shipping_addressline1() {

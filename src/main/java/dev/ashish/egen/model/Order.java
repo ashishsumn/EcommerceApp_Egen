@@ -18,15 +18,18 @@ public class Order implements Serializable {
     private Date created_date;
     private Date modified_date;
     private double order_subtotal;
+    private int shipping_id;
 
     public Order() {}
 
-    public Order(String order_status, String order_customer_id, Date created_date, Date modified_date, double order_subtotal){
+    public Order(String order_status, String order_customer_id, Date created_date, Date modified_date,
+                 double order_subtotal, int shipping_id){
         this.order_status = order_status;
         this.order_customer_id = order_customer_id;
         this.created_date = created_date;
         this.modified_date = modified_date;
         this.order_subtotal = order_subtotal;
+        this.shipping_id = shipping_id;
     }
 
     public String getOrder_status() {
@@ -69,7 +72,15 @@ public class Order implements Serializable {
         this.order_subtotal = order_subtotal;
     }
 
-/*    @Override
+    public int getShipping_id() {
+        return shipping_id;
+    }
+
+    public void setShipping_id(int shipping_id) {
+        this.shipping_id = shipping_id;
+    }
+
+    /*    @Override
     public String toString() {
         return "Order{" +
                 "id=" + id +

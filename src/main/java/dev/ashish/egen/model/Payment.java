@@ -15,6 +15,7 @@ public class Payment implements Serializable {
     private String payment_method;
     private Date payment_date;
     private int payment_confirmation_number;
+    private int billing_id;
 
     public Payment() {}
 

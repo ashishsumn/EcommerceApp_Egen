@@ -7,9 +7,7 @@ import java.io.Serializable;
 public class OrderTax implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private Long tax_id;
     private Long order_id;
     private double order_tax;
 
