@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Delivery implements Serializable {
 
     @Id
-    private int delivery_code;
+    private Integer delivery_code;
     private String description;
     private int shipping_charges;
 

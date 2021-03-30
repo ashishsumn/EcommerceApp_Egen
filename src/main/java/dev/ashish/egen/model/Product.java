@@ -9,7 +9,7 @@ public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private int product_id;
+    private Long product_id;
     private String product_name;
     private int product_inventory;
 

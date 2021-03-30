@@ -10,7 +10,7 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private Long order_id;
+    private Long orderId;
     private String order_status;
     @Column(nullable = false, updatable = false)
     private String order_customer_id;
