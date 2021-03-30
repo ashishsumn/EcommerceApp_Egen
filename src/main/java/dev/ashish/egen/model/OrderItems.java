@@ -4,23 +4,44 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@IdClass(OrderProductId.class)
 public class OrderItems implements Serializable {
 
-    @EmbeddedId
-    private OrderProductId orderProductId;
-    private int order_item_qty;
+    @Id
+    private Long orderId;
+    @Id
+    private Long productId;
+    private int orderItemQty;
 
     public OrderItems() {}
 
-    public OrderItems(int order_item_qty){
-        this.order_item_qty = order_item_qty;
+    public OrderItems(Long orderId, Long productId, int orderItemQty) {
+        this.orderId = orderId;
+        this.productId = productId;
+        this.orderItemQty = orderItemQty;
     }
 
-    public int getOrder_item_qty() {
-        return order_item_qty;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_item_qty(int order_item_qty) {
-        this.order_item_qty = order_item_qty;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    public int getOrderItemQty() {
+        return orderItemQty;
+    }
+
+    public void setOrderItemQty(int orderItemQty) {
+        this.orderItemQty = orderItemQty;
     }
 }

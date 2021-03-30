@@ -2,33 +2,31 @@ package dev.ashish.egen.model;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;
+import java.util.Objects;
 
-@Embeddable
+//@Embeddable
 public class OrderProductId implements Serializable {
 
-    private int order_id;
-    private int product_id;
+    private Long orderId;
+    private Long productId;
 
     public OrderProductId() {}
 
-    public OrderProductId(int order_id, int product_id){
-        this.order_id = order_id;
-        this.product_id = product_id;
+    public OrderProductId(Long orderId, Long productId) {
+        this.orderId = orderId;
+        this.productId = productId;
     }
 
-    public int getOrder_id() {
-        return order_id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderProductId that = (OrderProductId) o;
+        return Objects.equals(orderId, that.orderId) && Objects.equals(productId, that.productId);
     }
 
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
-    }
-
-    public int getProduct_id() {
-        return product_id;
-    }
-
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderId, productId);
     }
 }

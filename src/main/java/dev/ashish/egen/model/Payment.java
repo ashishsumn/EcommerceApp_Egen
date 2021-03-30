@@ -10,52 +10,64 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private Long payment_id;
-    private Long order_id;
-    private String payment_method;
-    private Date payment_date;
-    private int payment_confirmation_number;
-    private int billing_id;
+    private Long paymentId;
+    private Long orderId;
+    private String paymentMethod;
+    private Date paymentDate;
+    private int paymentConfirmationNumber;
+    private Long billingId;
 
     public Payment() {}
 
-    public Payment(Long order_id, String payment_method, Date payment_date, int payment_confirmation_number){
-        this.order_id = order_id;
-        this.payment_method = payment_method;
-        this.payment_date = payment_date;
-        this.payment_confirmation_number = payment_confirmation_number;
+    public Payment(Long orderId, String paymentMethod, Date paymentDate, int paymentConfirmationNumber, Long billingId) {
+        this.orderId = orderId;
+        this.paymentMethod = paymentMethod;
+        this.paymentDate = paymentDate;
+        this.paymentConfirmationNumber = paymentConfirmationNumber;
+        this.billingId = billingId;
     }
 
-    public Long getOrder_id() {
-        return order_id;
+    public Long getPaymentId() {
+        return paymentId;
     }
 
-    public void setOrder_id(Long order_id) {
-        this.order_id = order_id;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public String getPayment_method() {
-        return payment_method;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public void setPayment_method(String payment_method) {
-        this.payment_method = payment_method;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public Date getPayment_date() {
-        return payment_date;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
-    public void setPayment_date(Date payment_date) {
-        this.payment_date = payment_date;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public int getPayment_confirmation_number() {
-        return payment_confirmation_number;
+    public void setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
-    public void setPayment_confirmation_number(int payment_confirmation_number) {
-        this.payment_confirmation_number = payment_confirmation_number;
+    public int getPaymentConfirmationNumber() {
+        return paymentConfirmationNumber;
     }
 
+    public void setPaymentConfirmationNumber(int paymentConfirmationNumber) {
+        this.paymentConfirmationNumber = paymentConfirmationNumber;
+    }
+
+    public Long getBillingId() {
+        return billingId;
+    }
+
+    public void setBillingId(Long billingId) {
+        this.billingId = billingId;
+    }
 }

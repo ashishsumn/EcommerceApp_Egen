@@ -1,30 +1,30 @@
 package dev.ashish.egen.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 public class Delivery implements Serializable {
 
     @Id
-    private Integer delivery_code;
+    private Integer deliveryCode;
     private String description;
-    private int shipping_charges;
+    private int shippingCharges;
 
     public Delivery() {}
 
-    public Delivery(String description, int shipping_charges){
+    public Delivery(Integer deliveryCode, String description, int shippingCharges) {
+        this.deliveryCode = deliveryCode;
         this.description = description;
-        this.shipping_charges = shipping_charges;
+        this.shippingCharges = shippingCharges;
     }
 
-    public int getDelivery_code() {
-        return delivery_code;
+    public Integer getDeliveryCode() {
+        return deliveryCode;
     }
 
-    public void setDelivery_code(int delivery_code) {
-        this.delivery_code = delivery_code;
+    public void setDeliveryCode(Integer deliveryCode) {
+        this.deliveryCode = deliveryCode;
     }
 
     public String getDescription() {
@@ -35,11 +35,11 @@ public class Delivery implements Serializable {
         this.description = description;
     }
 
-    public int getShipping_charges() {
-        return shipping_charges;
+    public int getShippingCharges() {
+        return shippingCharges;
     }
 
-    public void setShipping_charges(int shipping_charges) {
-        this.shipping_charges = shipping_charges;
+    public void setShippingCharges(int shippingCharges) {
+        this.shippingCharges = shippingCharges;
     }
 }

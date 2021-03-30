@@ -9,30 +9,58 @@ public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private Long product_id;
-    private String product_name;
-    private int product_inventory;
+    private Long productId;
+    private String productName;
+    private double productPrice;
+    private String currency;
+    private int productInventory;
 
     public Product() {}
 
-    public Product(String product_name, int product_inventory){
-        this.product_name = product_name;
-        this.product_inventory = product_inventory;
+    public Product(String productName, double productPrice, String currency, int productInventory) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.currency = currency;
+        this.productInventory = productInventory;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
-    public int getProduct_inventory() {
-        return product_inventory;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_inventory(int product_inventory) {
-        this.product_inventory = product_inventory;
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public double getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public int getProductInventory() {
+        return productInventory;
+    }
+
+    public void setProductInventory(int productInventory) {
+        this.productInventory = productInventory;
     }
 }

@@ -8,29 +8,29 @@ public class OrderTax implements Serializable {
 
     @Id
     @Column(nullable = false, updatable = false)
-    private Long order_id;
-    private double order_tax;
+    private Long orderId;
+    private double orderTax;
 
     public OrderTax() {}
 
-    public OrderTax(Long order_id, double order_tax){
-        this.order_id = order_id;
-        this.order_tax = order_tax;
+    public OrderTax(Long orderId, double orderTax) {
+        this.orderId = orderId;
+        this.orderTax = orderTax;
     }
 
-    public Long getOrder_id() {
-        return order_id;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_id(Long order_id) {
-        this.order_id = order_id;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public double getOrder_tax() {
-        return order_tax;
+    public double getOrderTax() {
+        return orderTax;
     }
 
-    public void setOrder_tax(double order_tax) {
-        this.order_tax = order_tax;
+    public void setOrderTax(double orderTax) {
+        this.orderTax = orderTax;
     }
 }

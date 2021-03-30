@@ -1,24 +1,26 @@
 package dev.ashish.egen.model;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import java.util.Date;
 
-@Entity
-public class Billing implements Serializable {
+public class PaymentAndBillingDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = false)
-    private Long billingId;
+    private String orderPaymentMethod;
+    private Date orderPaymentDate;
+    private int orderPaymentConfirmationNumber;
     private String orderBillingAddressline1;
     private String orderBillingAddressline2;
     private String orderBillingCity;
     private String orderBillingState;
     private int orderBillingZip;
 
-    public Billing() {}
+    public PaymentAndBillingDetails() {}
 
-    public Billing(String orderBillingAddressline1, String orderBillingAddressline2, String orderBillingCity, String orderBillingState, int orderBillingZip) {
+    public PaymentAndBillingDetails(String orderPaymentMethod, Date orderPaymentDate, int orderPaymentConfirmationNumber,
+                                    String orderBillingAddressline1, String orderBillingAddressline2,
+                                    String orderBillingCity, String orderBillingState, int orderBillingZip) {
+        this.orderPaymentMethod = orderPaymentMethod;
+        this.orderPaymentDate = orderPaymentDate;
+        this.orderPaymentConfirmationNumber = orderPaymentConfirmationNumber;
         this.orderBillingAddressline1 = orderBillingAddressline1;
         this.orderBillingAddressline2 = orderBillingAddressline2;
         this.orderBillingCity = orderBillingCity;
@@ -26,8 +28,28 @@ public class Billing implements Serializable {
         this.orderBillingZip = orderBillingZip;
     }
 
-    public Long getBillingId() {
-        return billingId;
+    public String getOrderPaymentMethod() {
+        return orderPaymentMethod;
+    }
+
+    public void setOrderPaymentMethod(String orderPaymentMethod) {
+        this.orderPaymentMethod = orderPaymentMethod;
+    }
+
+    public Date getOrderPaymentDate() {
+        return orderPaymentDate;
+    }
+
+    public void setOrderPaymentDate(Date orderPaymentDate) {
+        this.orderPaymentDate = orderPaymentDate;
+    }
+
+    public int getOrderPaymentConfirmationNumber() {
+        return orderPaymentConfirmationNumber;
+    }
+
+    public void setOrderPaymentConfirmationNumber(int orderPaymentConfirmationNumber) {
+        this.orderPaymentConfirmationNumber = orderPaymentConfirmationNumber;
     }
 
     public String getOrderBillingAddressline1() {
