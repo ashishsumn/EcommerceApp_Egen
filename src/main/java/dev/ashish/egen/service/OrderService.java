@@ -75,7 +75,8 @@ public class OrderService {
     }
 
     public void deleteOrder(Long id){
-        orderRepo.deleteOrderByOrderId(id);
+        this.deleteOrderFromAllTables(id);
+        //orderRepo.deleteOrderByOrderId(id);
     }
 
     public Order processOrder(OrderDetails orderDetails){
@@ -107,12 +108,13 @@ public class OrderService {
         //populating billing and Payment table
         List<PaymentAndBillingDetails> paymentAndBillingDetailsList=  orderDetails.getPaymentAndBillingDetailsList();
         for(PaymentAndBillingDetails paymentAndBillingDetails : paymentAndBillingDetailsList){
+            System.out.println(">>>>>>>>"+paymentAndBillingDetails.getPaymentConfirmationNumber());
             Billing billing = this.addBillingDetails(new Billing(paymentAndBillingDetails.getOrderBillingAddressline1(),
                     paymentAndBillingDetails.getOrderBillingAddressline2(), paymentAndBillingDetails.getOrderBillingCity(),
                     paymentAndBillingDetails.getOrderBillingState(), paymentAndBillingDetails.getOrderBillingZip()));
 
-            Payment payment = this.addPaymentDetails(new Payment(newOrder.getOrderId(), paymentAndBillingDetails.getOrderPaymentMethod(),
-                    paymentAndBillingDetails.getOrderPaymentDate(), paymentAndBillingDetails.getOrderPaymentConfirmationNumber(),
+            Payment payment = this.addPaymentDetails(new Payment(newOrder.getOrderId(), paymentAndBillingDetails.getPaymentMethod(),
+                    paymentAndBillingDetails.getPaymentDate(), paymentAndBillingDetails.getPaymentConfirmationNumber(),
                     billing.getBillingId()));
         }
 
@@ -124,5 +126,10 @@ public class OrderService {
 
     private double calculateTax(double orderSubtotal){
         return orderSubtotal*0.2;
+    }
+
+    private void deleteOrderFromAllTables(Long id){
+        orderRepo.deleteOrderByOrderId(id);
+        //
     }
 }

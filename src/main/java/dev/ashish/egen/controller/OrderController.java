@@ -38,12 +38,6 @@ public class OrderController {
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
 
-    /*@PostMapping("/add")
-    public ResponseEntity<Order> addOrder(@RequestBody Order order) {
-        Order newOrder = orderService.addOrder(order);
-        return new ResponseEntity<>(newOrder, HttpStatus.CREATED);
-    }*/
-
     @PostMapping("/add")
     public ResponseEntity<Order> addOrder(@RequestBody OrderDetails orderDetails) {
         Order newOrder = orderService.processOrder(orderDetails);

@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class PaymentAndBillingDetails {
 
-    private String orderPaymentMethod;
-    private Date orderPaymentDate;
-    private int orderPaymentConfirmationNumber;
+    private String paymentMethod;
+    private Date paymentDate;
+    private int paymentConfirmationNumber;
     private String orderBillingAddressline1;
     private String orderBillingAddressline2;
     private String orderBillingCity;
@@ -15,12 +15,12 @@ public class PaymentAndBillingDetails {
 
     public PaymentAndBillingDetails() {}
 
-    public PaymentAndBillingDetails(String orderPaymentMethod, Date orderPaymentDate, int orderPaymentConfirmationNumber,
+    public PaymentAndBillingDetails(String paymentMethod, Date paymentDate, int paymentConfirmationNumber,
                                     String orderBillingAddressline1, String orderBillingAddressline2,
                                     String orderBillingCity, String orderBillingState, int orderBillingZip) {
-        this.orderPaymentMethod = orderPaymentMethod;
-        this.orderPaymentDate = orderPaymentDate;
-        this.orderPaymentConfirmationNumber = orderPaymentConfirmationNumber;
+        this.paymentMethod = paymentMethod;
+        this.paymentDate = paymentDate;
+        this.paymentConfirmationNumber = paymentConfirmationNumber;
         this.orderBillingAddressline1 = orderBillingAddressline1;
         this.orderBillingAddressline2 = orderBillingAddressline2;
         this.orderBillingCity = orderBillingCity;
@@ -28,28 +28,28 @@ public class PaymentAndBillingDetails {
         this.orderBillingZip = orderBillingZip;
     }
 
-    public String getOrderPaymentMethod() {
-        return orderPaymentMethod;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setOrderPaymentMethod(String orderPaymentMethod) {
-        this.orderPaymentMethod = orderPaymentMethod;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
-    public Date getOrderPaymentDate() {
-        return orderPaymentDate;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setOrderPaymentDate(Date orderPaymentDate) {
-        this.orderPaymentDate = orderPaymentDate;
+    public void setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
-    public int getOrderPaymentConfirmationNumber() {
-        return orderPaymentConfirmationNumber;
+    public int getPaymentConfirmationNumber() {
+        return paymentConfirmationNumber;
     }
 
-    public void setOrderPaymentConfirmationNumber(int orderPaymentConfirmationNumber) {
-        this.orderPaymentConfirmationNumber = orderPaymentConfirmationNumber;
+    public void setPaymentConfirmationNumber(int paymentConfirmationNumber) {
+        this.paymentConfirmationNumber = paymentConfirmationNumber;
     }
 
     public String getOrderBillingAddressline1() {
