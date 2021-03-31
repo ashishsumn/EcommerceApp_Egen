@@ -4,7 +4,7 @@ A microservices based ECommerce application developed using Spring Boot and REST
 
 Database: PostgreSQL13
 
-The application has been containerized using Docker.
+The application has been containerized using Docker and tested using JUnit and Mockito.
 
 Included: 
 1. Detailed database schema
