@@ -25,21 +25,12 @@ public class DeliveryService {
         return deliveryRepo.save(delivery);
     }
 
-    /*public List<Product> findAllProducts() {
-        return productRepo.findAll();
+    public List<Delivery> findAllDeliveryMethods() {
+        return deliveryRepo.findAll();
     }
 
-    public Product updateProduct(Product product) {
-        return productRepo.save(product);
+    public void deleteDeliveryMethod(int id){
+        deliveryRepo.deleteDeliveryByDeliveryCode(id);
     }
-
-    public Product findOrderByOrderId(Long id) {
-        return productRepo.findProductByProductId(id)
-                .orElseThrow(() -> new ProductNotFoundException("Product by id " + id + " was not found"));
-    }
-
-    public void deleteOrder(Long id){
-        productRepo.deleteProductByProductId(id);
-    }*/
 
 }
